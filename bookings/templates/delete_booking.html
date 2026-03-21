@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card p-4 shadow text-center">
+    <h3 class="text-danger">Delete Booking</h3>
+
+    <p>Are you sure you want to delete:</p>
+    <p><strong>{{ booking.customer_name }} - {{ booking.room }}</strong></p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

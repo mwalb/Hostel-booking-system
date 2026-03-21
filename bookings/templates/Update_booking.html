@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card p-4 shadow">
+    <h3>Update Booking</h3>
+
+    <form method="POST" class="row g-3">
+        {% csrf_token %}
+
+        <div class="col-md-6">
+            <input type="text" name="customer_name" value="{{ booking.customer_name }}" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <input type="text" name="room" value="{{ booking.room }}" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <input type="date" name="check_in" value="{{ booking.check_in }}" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <input type="date" name="check_out" value="{{ booking.check_out }}" class="form-control">
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-success">Update</button>
+            <a href="{% url 'booking_list' %}" class="btn btn-secondary">Back</a>
+        </div>
+    
+        {% if error %}
+        <div class="alert alert-danger">
+            {{error}}
+
+        </div>
+        {% endif %}
+        {% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+    </form>
+</div>
+
+{% endblock %}
