@@ -40,7 +40,7 @@ def update_booking(request,id):
       booking.check_out=request.POST['check_out']
       booking.save()
       return redirect('booking_list')
-   return render(request,'update_booking.html',{'booking':booking})
+   return render(request,'Update_booking.html',{'booking':booking})
 def delete_booking(request,id):
    booking=get_object_or_404(Booking,id=id)
 
