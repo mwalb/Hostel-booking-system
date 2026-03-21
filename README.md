@@ -11,7 +11,7 @@ A simple Django web application for managing hostel room bookings.
 
 ## Technologies Used
 - Django (Python)
-- HTML, CSS
+- HTML, bootstrap ,CSS
 - SQLite Database
 
 ## How to Run
