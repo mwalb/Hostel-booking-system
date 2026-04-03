@@ -5,9 +5,10 @@ from corsheaders.defaults import default_headers
 BASE_DIR = Path(__file__).resolve().parent.parent
 # settings.py
 AUTH_USER_MODEL = 'bookings.CustomUser'
-SECRET_KEY = 'django-insecure-ea7ip9()yf=q1snra^&25v9#bz&lhexae(ny%g8of6h=ywxoj#'
 
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = True
